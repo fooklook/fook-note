@@ -15,7 +15,10 @@ composer安装过程需要开启php的openssl扩展。
 
     composer create-project laravel/laravel --prefer-dist
 
-命令，进行安装。  
+命令，进行安装。
+在安装的过程中，可能需要你输入token,这是什么鬼，不管。
+要想获得这个token，你首先要注册一个github账号。  
+点击头像-->settings-->Personal access tokens，在这里面生成一个token就可以了。  
 安装过程很慢，请耐心等待。
 安装成功后，你就会发现在你安装的目录下，多了一个laravel的文件夹。  
 建议学习过程查看[laravel5.0文档](http://www.golaravel.com/laravel/docs/5.0/)
