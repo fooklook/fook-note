@@ -21,5 +21,6 @@ composer安装过程需要开启php的openssl扩展。
 点击头像-->settings-->Personal access tokens，在这里面生成一个token就可以了。  
 安装过程很慢，请耐心等待。
 安装成功后，你就会发现在你安装的目录下，多了一个laravel的文件夹。  
-建议学习过程查看[laravel5.0文档](http://www.golaravel.com/laravel/docs/5.0/)
+建议学习过程查看[laravel5.0文档](http://www.golaravel.com/laravel/docs/5.0/)  
+larvel视频教程网站[Laracasts](https://laracasts.com),国外网站加载比较慢。
 
