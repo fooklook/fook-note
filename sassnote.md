@@ -73,4 +73,59 @@ body{
 	}
 }
 ```
-###混合
+###混合(mixin)
+普通用法
+
+```sass
+@mixin center-block {
+	margin-left:auto;
+	margin-right:auto;
+}
+.demo{
+	@include center-block;
+}
+```
+参数用法
+
+```sass
+$mixin opacity($opacity:50){//默认为50
+	opacity: $opacity/100;
+}
+.opacity{
+	@include opactiy(100);
+}
+```
+###继承(extend)
+
+```sass
+h1{ border: 4px solid #000;}
+.speaker{
+	@extend h1;
+	border-width: 2px;
+}
+//生成的css style
+h1, .speaker{ border: 4px solid #000;}
+.speaker{ border-width:2px; }
+```
+###条件判断及循环
+
+```sass
+//判断
+$type : true;
+p{
+	@if $type {
+		color: blue;	
+	}
+}
+//三目判断
+if(true, 1px, 2px);
+//for循环
+@for $i from 1 through 3{}
+//each循环
+$list: value1, value2,value3;
+@each $value in $list {}
+$list: (value1,value2,value3), (value12,value13,value14);
+@each $value1, $value2, $value3 in $list{}
+$list: (key1:value1, key2:value2, key3:value3);
+@each $key,$value in $list{}
+```
