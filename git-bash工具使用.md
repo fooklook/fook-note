@@ -7,7 +7,8 @@
 ####附图一张
 ![git-bash](http://7xo7bi.com1.z0.glb.clouddn.com/20151110124414.png)
 
-git的[下载地址](http://git-scm.com/download/)
+git的[下载地址](http://git-scm.com/download/)  
+下载安装后，git不会再桌面上创建快捷键，需要自己到安装目录下，创建快捷方式。
 ####个人实用总结
 
 1. 'ctrl'+'+'放大git-bash字体
