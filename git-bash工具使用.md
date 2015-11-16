@@ -16,3 +16,8 @@ git的[下载地址](http://git-scm.com/download/)
 > cd /d
 3. 创建md文件
 >touch markdown.md
+
+####git-bash集成的工具
+vim  
+ssh  
+有待发现...
