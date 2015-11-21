@@ -13,15 +13,15 @@
 
 ###laravel学习目录
 
-- 在windows下安装laravel.md
-- laravel5学堂-开篇.md
-- laravel5学堂-路由.md
+- [在windows下安装laravel](https://github.com/fooklook/laravelnote/blob/master/%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85laravel.md)
+- [laravel5学堂-开篇](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E5%BC%80%E7%AF%87.md)
+- [laravel5学堂-路由](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E8%B7%AF%E7%94%B1.md)
 
 ###工具使用
 程序员学会使用工具，除了能提高开发效率外，关键还很酷。想想，在终端中，优雅的敲上几行命令就能解决问题，就是酷毙了。
 
-- [git-bash工具使用]()
-- [使用git-bash工具实现ssh公钥免密码push代码到github]()
+- [git-bash工具使用](https://github.com/fooklook/laravelnote/blob/master/toolnote/git-bash%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.md)
+- [使用git-bash工具实现ssh公钥免密码push代码到github](使用git-bash工具实现ssh公钥免密码push代码到github.md)
 
 ###php冷门知识
 这些知识在你写代码的时候，可能根本不需要考虑，但是一旦用上了就是救命的，还有这些知识可能对于你的面试有很大的帮助。
