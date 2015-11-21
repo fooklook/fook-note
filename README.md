@@ -30,4 +30,4 @@
 
 - [get和post区别](https://github.com/fooklook/laravelnote/blob/master/phpnote/get%E5%92%8Cpost%E5%8C%BA%E5%88%AB.md)
 - [php底层运行机制与原理分析](https://github.com/fooklook/laravelnote/blob/master/phpnote/php%E5%BA%95%E5%B1%82%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%E4%B8%8E%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90.md)
-- [多线层和多进程的区别](多https://github.com/fooklook/laravelnote/blob/master/phpnote/%E5%A4%9A%E7%BA%BF%E5%B1%82%E5%92%8C%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+- [多线层和多进程的区别](https://github.com/fooklook/laravelnote/blob/master/phpnote/%E5%A4%9A%E7%BA%BF%E5%B1%82%E5%92%8C%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB.md)
