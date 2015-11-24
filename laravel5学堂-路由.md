@@ -131,7 +131,7 @@ class UserController extends Controller{
 ```
 通过这种方式就能生成get的index@UserController的路由。(注意大小写)
 
-resource方法
+resource方法(详细可以查看控制器章节)
 这个方法也不需要事先声明路由。
 它将自动生成CURD的相关路由。
 
@@ -141,5 +141,20 @@ resource方法
 ```shell
 php artisan route:list
 ```
+
+###路由缓存
+使用路由缓存，将大幅降低注册应用程序所有路由所需要的时间。
+
+生成路由缓存：
+
+```php
+php artisan route:cache
+```
+移除路由缓存，不产生新的缓存：
+
+```php
+php artisan route:clear
+```
+
 ###警告
 千万不要在routes.php文件定义多余的路由，这样会报错。
