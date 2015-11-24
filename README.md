@@ -12,6 +12,7 @@
 ，建议大家使用后者。
 
 ###laravel学习目录
+首先这里的笔记，绝不仅仅是摘抄文档或者别人的博客这么简单，里面有一些文档中没有写到，个人对框架这样设计的综合理解。
 
 - [在windows下安装laravel](https://github.com/fooklook/laravelnote/blob/master/%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85laravel.md)
 - [laravel5学堂-开篇](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E5%BC%80%E7%AF%87.md)
