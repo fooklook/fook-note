@@ -17,6 +17,8 @@
 - [在windows下安装laravel](https://github.com/fooklook/laravelnote/blob/master/%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85laravel.md)
 - [laravel5学堂-开篇](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E5%BC%80%E7%AF%87.md)
 - [laravel5学堂-路由](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E8%B7%AF%E7%94%B1.md)
+- [laravel5学堂-中间件](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E4%B8%AD%E9%97%B4%E4%BB%B6.md)
+- [laravel5学堂-控制器](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E6%8E%A7%E5%88%B6%E5%99%A8.md)
 
 ###工具使用
 程序员学会使用工具，除了能提高开发效率外，关键还很酷。想想，在终端中，优雅的敲上几行命令就能解决问题，就是酷毙了。
