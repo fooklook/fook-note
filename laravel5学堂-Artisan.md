@@ -19,7 +19,6 @@ Options:
  --help (-h)	       显示帮助信息  
  --version (-V)        显示当前laravel版本  
  --ansi                该命令能和list命令差不多，不过它能显示出对比色。  
-
 可用命令:
  clear-compiled       删除编译后的类文件
  down                 项目进入维护模式
@@ -175,7 +174,8 @@ php artisan make:console FooCommand --command=foo:action
 
 在FooCommand.php文件中，修改命令描述和命令执行的动作。
 
-2.在app/console/kernel.php文件中$commands变量中添加对应的文件路径。
+2.注册自定义命令。  
+在app/console/kernel.php文件中$commands变量中添加对应的文件路径。
 
 3.命令参数与选项
 
