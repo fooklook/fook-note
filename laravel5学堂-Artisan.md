@@ -1,4 +1,14 @@
 ##laravel5学堂-Artisan
+###Artisan有什么用
+首先，Artisan自带了很多命令，已经具备了平时开发时，所需要的创建相关系统文件和快速部署项目的命令。这些命令可以减少很多边枝末节的开发任务，使你有更多的时间专注你的主要开发任务中来。
+
+Artisan可以通过添加一个Cron对象到服务器，就激活整个项目的定时执行任务，将定时执行项目纳入到项目可控范围内。通常情况下，这类开发我们都是通过在服务器中添加多个定时任务，来实现，在项目迁移等操作中，定时器任务需要独立做一个迁移和调试的开发任务，使得项目的部署效率降低。
+
+除了做定时任务外，我们可以自定义一些命令，用于检测项目的一个其他动作，比如外部数据请求测试。比如与银行对接的支付任务中，银行的开发者首先要保证的银行系统的稳定性，所以就不能像微信那样，做的比较灵活，当你没有确认支付成功的时候，它会不断的向你的借口推送支付成功的信息。这个时候就需要你这边主动去访问银行的接口，获取支付成功信息。
+
+还有就是图片同步的问题，一个大体量的网站，用户上传的图片可能不计其数。处于项目安装的考虑，网站一般都要做备份。数据库和代码比较好处理，都有相关的成熟方案。但是对于图片，储存量比较大，人工处理的话，不难，但是时间成本比较高。如果单独开发一个系统进行管理，成本又比较高。就比如我现在项目图片会通过云存储进行备份和CDN加速服务，但租用的低成本云服务器不是特别的信任，可能在访问量大的时候，图片自动同步功能就会出现问题。所以我就自己写了一个命令去确定图片的同步状况。不管是定时任务自动确认，还是手动确认，效率都比较高。
+
+###内置Artisan命令介绍
 Artisan是我提到的从文件式管理模式转为命令行管理模式的核心之一。
 
 首先它自带了很多种命令，这些命令基本上覆盖了，你所有后台开发任务执行的动作。
@@ -179,4 +189,44 @@ php artisan make:console FooCommand --command=foo:action
 
 3.命令参数与选项
 
-...
+在通过命令创建command文件后，文件中有两个方法getArguments与getOptions。
+
+理解这两个参数并不难，使用过命令行的同学应该都知道，通过传入参数实现不同的执行动作。
+
+```php
+//在getArguments方法中需要传入四个元素。
+[$name, $mode, $description, $defaultValue]
+//通过设置参数mode的值，设定该命令参数是否为必须数据参数。InputArgument::REQUIRED必须 InputArgument::OPTIONAL可选
+//在getOptions方法中需要传入五个元素
+[$name, $shortcut, $mode, $description, $defaultValue]
+//通过设置参数mode的值，设定传入参数的类型。InputOption::VALUE_REQUIRED, InputOption::VALUE_OPTIONAL, InputOption::VALUE_IS_ARRAY, InputOption::VALUE_NONE。
+```
+4.获取输入的值
+
+```php
+//取得自定义命令被输入的参数
+$value = $this->argument('name');
+//取得自定义命令被输入的所有参数
+$arguments = $this->argument();
+//取得自定义命令被输入的选项
+$options = $this->option();
+```
+
+5.输出信息到屏幕
+
+```php
+//显示一般消息到终端屏幕
+$this->info('Display this on the screen');
+//显示错误消息到终端屏幕
+$this->error('Something went wrong!');
+//提示用户进行输入
+$name = $this->ask('What is your name?');
+//提示用户进行加密输入
+$password = $this->secret('What is the password?');
+//提示用户进行确认
+if ($this->confirm('Do you wish to continue? [yes|no]')){}
+//指定默认输入
+$this->confirm($question, true);
+//调用其它命令
+$this->call('command:name', ['argument' => 'foo', '--option' => 'bar']);
+```
