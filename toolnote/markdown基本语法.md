@@ -33,9 +33,11 @@
 _斜体_  
 **粗体**  
 __粗体__  
+使用 \`符号表示海内代码
+
 ```php
 	phpinfo();
-	echo "这是代码";
+	echo "这是代块";
 ```
 ![图片](http://static.zhihu.com/static/revved/img/sticky_header/new_logo.010e8320.png)  
 
