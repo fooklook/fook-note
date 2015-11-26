@@ -21,6 +21,7 @@
 - [laravel5学堂-控制器](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E6%8E%A7%E5%88%B6%E5%99%A8.md)
 - [laravel5学堂-请求及响应](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-%E8%AF%B7%E6%B1%82%E5%8F%8A%E5%93%8D%E5%BA%94.md)
 - [laravel5学堂-Artisan](https://github.com/fooklook/laravelnote/blob/master/laravel5%E5%AD%A6%E5%A0%82-Artisan.md)
+- [laravel5学堂-视图](./laravel5%E5%AD%A6%E5%A0%82-%E8%A7%86%E5%9B%BE.md)
 
 ###工具使用
 程序员学会使用工具，除了能提高开发效率外，关键还很酷。想想，在终端中，优雅的敲上几行命令就能解决问题，就是酷毙了。
