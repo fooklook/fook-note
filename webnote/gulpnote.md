@@ -83,6 +83,9 @@ npm update
 
 ```
 //直接执行安装命令
-m install -–save-dev gulp-uglify --registry=http://registry.npm.taobao.org
+npm install -–save-dev gulp-uglify --registry=http://registry.npm.taobao.org
 ```
 通过使用共同使用不同的插件，可以将多个文件压缩到同一个文件中。这样在部署网站的时候，因为js文件被压缩在同一个文件，使得网站的访问速度加快。
+
+####监听文件修改，自动更新浏览器
+http://www.imooc.com/article/2364
