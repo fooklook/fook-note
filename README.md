@@ -24,6 +24,7 @@
 - [laravel5学堂-请求及响应](./laravel5%E5%AD%A6%E5%A0%82-%E8%AF%B7%E6%B1%82%E5%8F%8A%E5%93%8D%E5%BA%94.md)
 - [laravel5学堂-Artisan](./laravel5%E5%AD%A6%E5%A0%82-Artisan.md)
 - [laravel5学堂-视图](./laravel5%E5%AD%A6%E5%A0%82-%E8%A7%86%E5%9B%BE.md)
+- [laravel5学堂-系统架构](./laravel5%E5%AD%A6%E5%A0%82-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.md)
 
 ###工具使用
 程序员学会使用工具，除了能提高开发效率外，关键还很酷。想想，在终端中，优雅的敲上几行命令就能解决问题，就是酷毙了。
