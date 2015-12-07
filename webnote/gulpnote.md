@@ -57,7 +57,7 @@ var gulp = require('gulp'),
 gulp.task('minify', function () {
    gulp.src('js/*.js')
       .pipe(uglify())
-      .pipe(gulp.dest('assets/js'))
+      .pipe(gulp.dest('assets/js'));
 });
 ```
 解析一下上面的代码，通过var声明另个变量，引入gulp和gulp-uglify插件。
@@ -88,4 +88,48 @@ npm install -–save-dev gulp-uglify --registry=http://registry.npm.taobao.org
 通过使用共同使用不同的插件，可以将多个文件压缩到同一个文件中。这样在部署网站的时候，因为js文件被压缩在同一个文件，使得网站的访问速度加快。
 
 ####监听文件修改，自动更新浏览器
-http://www.imooc.com/article/2364
+查看了网上很多的案例，才总结了一下内容，确保一次成功。
+
+传统的方法是通过livereload+chrome的livereload插件来实现，首先需要安装chrome的插件，这个就屏蔽了很多人。
+
+但是通过以下方法，就可以做到，所有浏览器只要通过指定端口，就能做到实时刷新。
+
+首先需要的gulp组件
+
+- gulp-connect
+- gulp-livereload 
+- gulp-uglify	//压缩js文件
+- gulp-minify-css //压缩css文件
+
+gulpfile.js源码
+
+```javascript
+var gulp = require('gulp'),
+   uglify = require('gulp-uglify');		//js压缩
+   mincss = require("gulp-minify-css"),				//css压缩
+   livereload = require('gulp-livereload'),
+   connect = require('gulp-connect');
+
+gulp.task('minify', function () {
+   gulp.src('js/*.js')
+      .pipe(uglify())
+      .pipe(gulp.dest('assets/js'));
+   gulp.src('css/*.css')
+      .pipe(mincss())
+      .pipe(gulp.dest('assets/css'))
+      .pipe(connect.reload());
+   
+   console.log('yes');
+});
+gulp.task('watch',function(){
+    gulp.watch('js/*.js',['minify']);
+});
+gulp.task('reload',function(){
+	connect.server({
+		root: "./",
+		port: 8000,
+		livereload: true
+	});
+	gulp.watch(['css/*.css','js/*.js'],['minify']);
+});
+```
