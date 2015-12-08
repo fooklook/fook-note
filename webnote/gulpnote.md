@@ -109,7 +109,6 @@ var gulp = require('gulp'),
    mincss = require("gulp-minify-css"),				//css压缩
    livereload = require('gulp-livereload'),
    connect = require('gulp-connect');
-
 gulp.task('minify', function () {
    gulp.src('js/*.js')
       .pipe(uglify())
@@ -118,7 +117,7 @@ gulp.task('minify', function () {
       .pipe(mincss())
       .pipe(gulp.dest('assets/css'))
       .pipe(connect.reload());
-   
+   gulp.src();  
    console.log('yes');
 });
 gulp.task('watch',function(){
@@ -130,6 +129,25 @@ gulp.task('reload',function(){
 		port: 8000,
 		livereload: true
 	});
-	gulp.watch(['css/*.css','js/*.js'],['minify']);
+	gulp.watch(['css/*.css','js/*.js','./*.html'],['minify']);
 });
 ```
+以上的代码意思是，通过gulp-connect设置一个服务器，用来监听8000端口，通过watch监听所有文件的变化，用gulp-livereload来进行实时刷新。
+
+在任何浏览器，输入localhost:8000就可以访问root目录下的指定文件。指定的文件发生修改，就会自动刷新页面。
+
+常用插件介绍：
+
+gulp-cache：图片缓存，只有图片替换了才压缩  
+gulp-uglify：js文件压缩  
+gulp-concat：文件合并  
+gulp-minify-css：css文件压缩  
+gulp-imagemin：图片压缩  
+gulp-rename：文件重命名  
+比如压缩后的css文件名添加min   
+.pipe(rename({suffix: '.min'}))  
+gulp-notify：消息通知  
+gulp-autoprefixer：自动补全css前缀  
+gulp-livereload：自动刷新  
+gulp-connect：WEB测试服务器  
+gulp-coffee：编译coffee代码为Js代码，使用coffeescript必备  
