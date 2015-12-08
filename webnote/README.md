@@ -11,7 +11,19 @@ javascript是一门前后端开发人员都需要掌握的语言。
 
 痛定思痛，为了为自己以后做好铺垫，记录下自己的学习路程，为自己以后系统学习打好基础。
 
-###第一阶段
+###javascript基础
+####第一阶段
 面对我这种直接上手jquery实现效果的人来说，我连map的基本语法是什么都不知道，所以打算从最基础开始学起。
 
-####《javascript高级程序设计》
+#####《javascript高级程序设计》
+
+###javascript延伸
+
+- [gulp自动化构建工具](gulpnote.md)
+- [sass基本语法](sassnote.md)
+
+###javascript八卦
+
+- [js框架对比](js框架对比.md)
+
+###bootstrap学习总结
