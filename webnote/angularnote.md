@@ -30,7 +30,8 @@ ng-app指令定义了应用, ng-controller 定义了控制器。
 名: <input type="text" ng-model="firstName"><br>
 姓: <input type="text" ng-model="lastName"><br>
 <br>
-姓名: {{firstName + " " + lastName}}
+姓名: {{firstName + " " + lastName}}<br>
+姓名：<span ng-bind='firstName + " " + lastName'></span>
 </div>
 <script>
 var app = angular.module('myApp', []);
@@ -49,3 +50,91 @@ ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
 ng-bind 指令把应用程序数据绑定到 HTML 视图。
 
 ng-init 指令初始化 AngularJS 应用程序变量。
+
+```html
+<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+<p>姓名： <span ng-bind="firstName + ' ' + lastName"></span></p>
+</div> 
+```
+ng-repeat 指令对于集合中（数组中）的每个项会 克隆一次 HTML 元素。
+
+```html
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+<p>循环对象：</p>
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+</div> 
+```
+ng-controller 指令定义了应用程序控制器。
+
+```html
+ <div ng-app="myApp" ng-controller="myCtrl">
+名: <input type="text" ng-model="firstName"><br>
+名: <input type="text" ng-model="lastName"><br>
+<br>
+姓名: {{firstName + " " + lastName}}
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+</script> 
+```
+
+###AngularJS 表达式 与 JavaScript 表达式
+
+类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。
+###Angular过滤器
+过滤器可以使用一个管道字符（|）添加到表达式和指令中。
+
+currency 	格式化数字为货币格式。
+
+```html
+<div ng-app="myApp" ng-controller="costCtrl">
+<input type="number" ng-model="quantity">
+<input type="number" ng-model="price">
+<p>总价 = {{ (quantity * price) | currency }}</p>
+</div> 
+``` 
+filter 	从数组项中选择一个子集。
+
+```html
+<div ng-app="myApp" ng-controller="namesCtrl">
+<p><input type="text" ng-model="test"></p>
+<ul>
+  <li ng-repeat="x in names | filter:test | orderBy:'country'">
+    {{ (x.name | uppercase) + ', ' + x.country }}
+  </li>
+</ul>
+</div> 
+```
+orderBy 	根据某个表达式排列数组。
+
+```html
+<div ng-app="myApp" ng-controller="namesCtrl">
+<ul>
+  <li ng-repeat="x in names | orderBy:'country'">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+<div> 
+```
+lowercase 	格式化字符串为小写。    
+uppercase 	格式化字符串为大写。
+
+```html
+ <div ng-app="myApp" ng-controller="personCtrl">
+<p>姓名为 {{ lastName | lowercase }}</p>
+</div> 
+<div ng-app="myApp" ng-controller="personCtrl">
+<p>姓名为 {{ lastName | uppercase }}</p>
+</div> 
+```
