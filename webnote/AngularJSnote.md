@@ -88,7 +88,14 @@ app.controller('myCtrl', function($scope) {
 });
 </script> 
 ```
+ng-include 指令来包含 HTML 内容
 
+```html
+<div class="container">
+  <div ng-include="'model1.htm'"></div>
+  <div ng-include="'model2.htm'"></div>
+</div>
+```
 ###AngularJS 表达式 与 JavaScript 表达式
 
 类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。
