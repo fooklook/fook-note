@@ -144,3 +144,46 @@ var sum = numbers.reduceRight(function(prev,cur,index,array){
 });
 //sum -> 15
 ```
+
+字符串处理函数
+
+```javascript
+var s1 = "some text";
+s1.length	//9
+s1.charAt(1)	//o  以字符串形式，返回特定位置的字符
+s1.charCodeAt(1)	//101  返回字符编码
+s1.slice(-3);		//"ext"
+sl.substring(-3);	//"some text"
+sl.substr(-3);		//ext
+s1.slice(3,-4);		//"e "
+s1.substring(3,-4);	//"som"
+s1.substr(3,-4);	//""
+//字符串所在位置
+var string = "hello world";
+string.indexOf("o");	//4
+string,indexOf("o",6);	//7
+string.lastIndexOf("o");	//7
+string.lastIndesOf("o",6);	//4
+//字符串转数字
+parseInt("100abc");
+parseFloat("1000.01")// 1000.01 取浮点型
+Math.floor("1000.01"); // 1000向下取整
+var x = Math.round("1000.56"); // 1001 四舍五入
+//trim
+var string = "   hello  ";
+string.trim();		//hello
+//大小写转换
+var string = "hello world";
+string.toLowerCase();		//"HELLO WORLD"
+string.toUpperCase();		//"hello world"
+```
+
+数字处理函数
+
+```javascript
+var num = 10;
+num.toString(); //"10"	取字符串
+num.toString(0); //"1010" 取2进制
+num.Fixed(2);	//"10.00" 浮点型
+
+```
