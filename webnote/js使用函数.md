@@ -175,7 +175,21 @@ string.trim();		//hello
 //大小写转换
 var string = "hello world";
 string.toLowerCase();		//"HELLO WORLD"
-string.toUpperCase();		//"hello world"
+string.toUpperCase();		//"hello world"‘
+//正则匹配
+var text = 'cat,bat,sat,fat';
+var pattern = /.at/;
+var matches = text.match(pattern);
+matches.index	//0
+matches[0]	//"cat"
+parrern.lastIndex	//0
+//匹配替换
+var result = text.replace("at","ond");
+result					//"cond,bond,sond,fond"
+var result = text.replace(/at/g,"ond");
+result					//"cond,bond,sond,fond"
+var result = text.replace(/(.at)/g,"world ($1)");
+result					//world (cat),world (bat), world(sat),world(fat)
 ```
 
 数字处理函数
@@ -185,5 +199,10 @@ var num = 10;
 num.toString(); //"10"	取字符串
 num.toString(0); //"1010" 取2进制
 num.Fixed(2);	//"10.00" 浮点型
-
+//舍入方法
+Math.ceil(25.9);	//26 向上取整
+Math.round(25.9);	//26 四舍五入
+Math.floor(25.9);	//向下取整
+//生成随机数
+Math.random()		//生成0-1的小数
 ```
