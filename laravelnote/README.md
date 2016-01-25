@@ -16,8 +16,8 @@
 ###laravel学习目录
 首先这里的笔记，绝不仅仅是摘抄文档或者别人的博客这么简单，里面有一些文档中没有写到，个人对框架这样设计的综合理解。
 
-- [在windows下安装laravel](./%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85laravel.md)
-- [laravel5学堂-开篇](./laravel5%E5%AD%A6%E5%A0%82-%E5%BC%80%E7%AF%87.md)
+- [在windows下安装laravel](./laravel在windows平台安装教程.md)
+- [laravel5学堂-开篇](./laravel5学堂开篇.md)
 - [laravel5学堂-路由](./laravel5%E5%AD%A6%E5%A0%82-%E8%B7%AF%E7%94%B1.md)
 - [laravel5学堂-中间件](./laravel5%E5%AD%A6%E5%A0%82-%E4%B8%AD%E9%97%B4%E4%BB%B6.md)
 - [laravel5学堂-控制器](./laravel5%E5%AD%A6%E5%A0%82-%E6%8E%A7%E5%88%B6%E5%99%A8.md)
@@ -64,4 +64,4 @@ php被各种吐槽和诟病，所以作为用php开发的phper总在心里面，
 
 希望你们看到以下标题内容，能够兴奋起来。
 
-- [phper快速提现之路](./phper快速提现之路)
+- [phper快速提现之路](./phper快速提现之路.md)

@@ -1,4 +1,4 @@
-##Xunsearchnote
+##xunsearchnote
 ###Xunsearch(讯搜)搜索引擎的优势：
 
 - 提供大量内置可商业化搜索功能。

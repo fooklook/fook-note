@@ -1,4 +1,4 @@
-###AngularJS应用的解析
+###AngularJSnote
 
 本节描述AngularJS应用程序的三个组成部分，并解释它们如何映射到模型-视图-控制器设计模式：
 ####模板（Templates）

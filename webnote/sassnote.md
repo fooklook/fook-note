@@ -1,4 +1,4 @@
-##Sass学习笔记
+##sassnote
 ###导入
 关键字@import  
 ###变量

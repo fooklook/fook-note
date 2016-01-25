@@ -1,4 +1,4 @@
-##Gulp（部分转载）
+##gulpnote
 ###Gulp工具能实现新的功能。
 
 - 编译预处理CSS

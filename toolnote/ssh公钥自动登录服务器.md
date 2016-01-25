@@ -1,4 +1,4 @@
-##ssh公钥自动登陆ubuntu服务器
+##ssh公钥自动登录服务器
 第一步，在服务器上安装openssh-server，用来实现远程登录。
 
 ```shell

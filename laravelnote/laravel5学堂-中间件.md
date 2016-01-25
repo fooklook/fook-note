@@ -1,4 +1,4 @@
-##laravel学堂-中间件
+##laravel5学堂-中间件
 ![laravel流程图](http://7xo7bi.com1.z0.glb.clouddn.com/ycz_onion.png)
 
 如上图所示，中间件就是处理session和Authentication这俩层事务。

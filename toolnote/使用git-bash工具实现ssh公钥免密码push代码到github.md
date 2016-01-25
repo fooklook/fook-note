@@ -1,5 +1,5 @@
-##免密钥push代码到github
->环境：windows系统+[git-bash工具](https://github.com/fooklook/laravelnote/blob/master/git-bash%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.md)
+##使用git-bash工具实现ssh公钥免密码push代码到github
+>环境：windows系统+[git-bash工具](./git-bash工具使用.md)
 
 ###创建本地的密钥
 因为git-bash本身集成了ssh，所以我们可以方便的直接使用ssh的相关命令。  
