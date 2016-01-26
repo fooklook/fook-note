@@ -4,7 +4,7 @@
 sudo apt-get install git
 ```
 ###windows下使用git
-建议安装git bash[git-bash工具使用](./git-bash工具使用.md)
+建议安装git bash [git-bash工具使用](../toolnote/git-bash工具使用.md)
 
 ###设置机器标识
 

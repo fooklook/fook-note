@@ -19,11 +19,11 @@ javascript是一门前后端开发人员都需要掌握的语言。
 
 ###javascript延伸
 
-- [gulp自动化构建工具](gulpnote.md)
-- [sass基本语法](sassnote.md)
+- [gulp自动化构建工具](./gulpnote.md)
+- [sass基本语法](./sassnote.md)
 
 ###javascript八卦
 
-- [js框架对比](js框架对比.md)
+- [js框架对比](./js框架对比.md)
 
 ###bootstrap学习总结
