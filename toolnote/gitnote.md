@@ -67,3 +67,12 @@ git rm filename
 git checkout -- filename
 
 git reset HEAD filename
+
+###修改远程服务器链接等问题
+添加远程服务器连接
+
+git remote add origin1 url
+
+修改远程服务器链接
+
+git remote set-url origin url
