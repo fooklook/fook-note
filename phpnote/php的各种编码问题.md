@@ -3,7 +3,7 @@
 ###判断字符编码
 ```php
 $charset = mb_detect_encoding($str,array('UTF-8','GBK','GB2312')); 
-if($charset = 'cp936'){
+if($charset == 'cp936'){
 	$charset='GBK'; 
 }
 ```
