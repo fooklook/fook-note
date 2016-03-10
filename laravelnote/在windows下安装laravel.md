@@ -10,7 +10,7 @@ laravel框架和以往的框架（如：yii1.1、CI框架、TP框架），有很
 - php5.4以上版本(这里只需要这个条件)
 
 ###安装composer
-首先进入官网下载安装包**[点击下载composer安装包](https://getcomposer.org/Composer-Setup.exe)**。
+首先进入官网下载安装包[点击下载composer安装包](https://getcomposer.org/Composer-Setup.exe)。
 
 composer安装过程需要开启php的openssl扩展。
 
