@@ -10,11 +10,16 @@ laravel框架和以往的框架（如：yii1.1、CI框架、TP框架），有很
 - php5.4以上版本(这里只需要这个条件)
 
 ###安装composer
-首先进入官网下载安装包**[点击下载composer安装包](https://getcomposer.org/Composer-Setup.exe)**。  
+首先进入官网下载安装包**[点击下载composer安装包](https://getcomposer.org/Composer-Setup.exe)**。
+
 composer安装过程需要开启php的openssl扩展。
-然而如果时安装wamp的同学，通过wamp控制台打开扩展后，安装过程中可能依然提示需要开启openssl扩展。  
-那是因为wamp安装后，会有两个php.ini文件，分别是wamp在apache和在CLI（命令行）模式下使用不同的配置文件，所以你需要找到C:\wamp\bin\php\php5.4.12\目录下的php.ini文件，开启openssl扩展。  
+
+然而如果时安装wamp的同学，通过wamp控制台打开扩展后，安装过程中可能依然提示需要开启openssl扩展。
+
+那是因为wamp安装后，会有两个php.ini文件，分别是wamp在apache和在CLI（命令行）模式下使用不同的配置文件，所以你需要找到C:\wamp\bin\php\php5.4.12\目录下的php.ini文件，开启openssl扩展。
+
 接下来你就可以顺利安装composer了。
+
 ###安装laravel
 虽然官网上提供了，可以实现下载laravel安装包，然后通过laravel new project的方式安装laravel。但因为国内防火墙的原因，下载起来很慢，而且在windows平台，命令也无法正常执行。所以建议直接通过  
 
