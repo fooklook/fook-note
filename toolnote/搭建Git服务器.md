@@ -20,7 +20,7 @@ sudo是提权命令，但不是所有用户都有提权的权限，所以需要�
 
 ```shell
 //切换到root用户下
-su root
+su root%
 //添加sudo文件的写权限
 sudo chmod u+w /etc/sudoers
 //编辑sudoers文件
