@@ -90,3 +90,33 @@ var factorial = (function f(num){
 ###闭包
 
 闭包是指有权访问另一个函数作用域中的变量的函数。
+
+后台的每一个执行环境都会有一个变量的对象--变量对象。全局环境的变量对象始终存在着，而局部变量的变量对象，则只有在函数执行的过程中存在。而闭包中的匿名函数的作用链被赋给了全局变量，所以当函数执行完后，闭包中的匿名函数的活动对象没有被销毁。
+
+####闭包作用域链的副作用
+
+```javascript
+function createFunction(){
+	var result = new Array();
+	for(var i=0;i<10;i++){
+		result[i] = function(){
+			return i;
+		}
+	}
+}
+//执行该函数，返回的结果对象，执行后，输出的结果都是10。
+```
+
+```javascript
+//改为以下做法才能返回想要的结果。
+function createFunctions(){
+	var result = new Array();
+	for (var i = 0; i <10; i++) {
+		result[i] = function(num){
+			return num;
+		}(i);
+	}
+	return result;
+}
+```
+
