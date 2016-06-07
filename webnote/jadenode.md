@@ -300,9 +300,7 @@ p This is #{msg.toUpperCase()}
 <h1>On Dogs: Man's Best Friend</h1>
 <p>Written with love by enlore</p>
 <p>This will be safe: &lt;span&gt;escape!&lt;/span&gt;</p>
-
 <p>This is NOT MY INSIDE VOICE</p>
-
 <div class="quote">
   <p>Joel: <em>Some of the girls are wearing my mother's clothing.</em></p>
 </div>
