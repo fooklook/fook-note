@@ -67,7 +67,7 @@ background:-moz-linear-gradient(45deg,rgba(0,0,0,0),90%, rgba(255,0,255,1)),url(
 
 ###经向渐变
 
-IE10+等浏览器支持径向渐变
+IE10+等浏览器支持径向渐变，opera浏览器不支持。
 
 ####不同浏览器写法
 
@@ -78,3 +78,84 @@ IE10+等浏览器支持径向渐变
 radial-gradient([<bg-position> || <angle>]?, [<shape> || <size>]?, <color-stop>, <color-stop>[, <color-stop>]*); /* 标准的语法 */
 ```
 
+####普通使用方法
+
+```html
+background: radial-gradient(#ace, #f96, #1E90FF);
+background: -moz-radial-gradient(#ace, #f96, #1E90FF);
+background: -webkit-radial-gradient(#ace, #f96, #1E90FF);
+```
+
+####比例显示
+
+```html
+background: radial-gradient(#ace 5%, #f96 25%, #1E90FF 50%);
+background: -moz-radial-gradient(#ace 5%, #f96 25%, #1E90FF 50%);
+background: -webkit-radial-gradient(#ace 5%, #f96 25%, #1E90FF 50%);
+```
+
+####通过position设置圆心位置
+
+```html
+background: radial-gradient(bottom left, #ace, #f96, #1E90FF);
+background: -moz-radial-gradient(bottom left, #ace, #f96, #1E90FF);
+background: -webkit-radial-gradient(bottom left, #ace, #f96, #1E90FF);
+```
+
+####size:
+
+- closest-side：指定径向渐变的半径长度为从圆心到离圆心最近的边
+- closest-corner：指定径向渐变的半径长度为从圆心到离圆心最近的角
+- farthest-side：指定径向渐变的半径长度为从圆心到离圆心最远的边
+- farthest-corner：指定径向渐变的半径长度为从圆心到离圆心最远的角
+- contain：包含，指定径向渐变的半径长度为从圆心到离圆心最近的点。类同于closest-side
+- cover：覆盖，指定径向渐变的半径长度为从圆心到离圆心最远的点。类同于farthest-corner 
+
+####shape
+
+- circle：指定圆形的径向渐变
+- ellipse：指定椭圆形的径向渐变。写本文档时Chrome,Safari尚不支持该参数值
+
+####设置一个椭圆型渐变
+
+```html
+.radial-box{
+    width:500px;
+    height: 450px;
+    /*border-radius: 100%;*/
+    background: radial-gradient(150px 100px at 100px  150px,#f96,#000,yellow,rgba(0,255,0,0.5),rgba(0,105,0,0.5),rgba(255,0,255,0.5));
+    background: -webkit-radial-gradient(150px 1000px at 100px  150px,#f96,#000,yellow,rgba(0,255,0,0.5),rgba(0,105,0,0.5),rgba(255,0,255,0.5));
+}
+```
+
+第一个参数的前两个数值，分别指定主要半径，次要半径。后面两个数值指定圆心的位置。
+
+后面指定的色值除最后一个做为整个盒子的背景色外，其它不管设置多少个色值都为椭圆的渐进色。
+
+####其它方式设置椭圆型渐变
+
+```html
+//普通使用方法
+background:radial-gradient(ellipse,#f96,green);
+background:-webkit-radial-gradient(ellipse,#f96,green);
+//指定size
+background:radial-gradient(ellipse closest-corner,#f96,green);
+background:-webkit-radial-gradient(ellipse closest-corner,#f96,green);
+```
+
+###重复渐变
+
+####线性重复渐变
+
+```html
+background: repeating-linear-gradient(45deg , red, yellow 100px, green 200px);
+background: -moz-repeating-linear-gradient(45deg , red, yellow 100px, green 200px);
+background: -webkit-repeating-linear-gradient(45deg , red, yellow 100px, green 200px);
+```
+
+####径向重复渐变
+```html
+background: repeating-radial-gradient(100px 200px, #ace, #ace 5px, #f96 5px, #f96 10px);
+background: -moz-repeating-radial-gradient(100px 200px, #ace, #ace 5px, #f96 5px, #f96 10px);
+background: -webkit-repeating-radial-gradient(100px 200px, #ace, #ace 5px, #f96 5px, #f96 10px);
+```
