@@ -65,7 +65,7 @@ a:after{
 
 ###插入项目编号
 
-![演示地址](https://jsfiddle.net/dwqs/2ueLg3uj/)
+[演示地址](https://jsfiddle.net/dwqs/2ueLg3uj/)
 
 ```html
 <h1>大标题</h1>
@@ -89,7 +89,7 @@ h1{
 
 ###项目编号修饰
 
-![演示地址](https://jsfiddle.net/dwqs/17hqznca/)默认插入的项目编号是数字型的，1,2,3.。。。自动递增，也能给项目编号追加文字和样式,依旧利用上面的html，css修改如下：
+[演示地址](https://jsfiddle.net/dwqs/17hqznca/)默认插入的项目编号是数字型的，1,2,3.。。。自动递增，也能给项目编号追加文字和样式,依旧利用上面的html，css修改如下：
 
 ```css
 h1:before{
@@ -152,7 +152,7 @@ p{
 }
 ```
 
-![演示地址](https://jsfiddle.net/dwqs/2k5qbz51/)
+[演示地址](https://jsfiddle.net/dwqs/2k5qbz51/)
 
 在示例的输出中可以发现，p的编号是连续的。如果对于每一个h1后的三个p重新编号的话，可以使用counter-reset属性重置，修改上述h1的css:
 
@@ -163,7 +163,7 @@ h1{
 }
 ```
 
-![演示地址](https://jsfiddle.net/dwqs/hfutu4Lq/)
+[演示地址](https://jsfiddle.net/dwqs/hfutu4Lq/)
 
 还可以实现更复杂的嵌套，例如三层嵌套。
 
@@ -209,4 +209,4 @@ h3{
 }
 ```
 
-![演示地址](https://jsfiddle.net/dwqs/wuuckquy/)
+[演示地址](https://jsfiddle.net/dwqs/wuuckquy/)
