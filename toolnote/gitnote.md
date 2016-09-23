@@ -76,3 +76,7 @@ git remote add origin1 url
 修改远程服务器链接
 
 git remote set-url origin url
+
+查看远程仓库地址
+
+git remote -v

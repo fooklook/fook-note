@@ -10,7 +10,10 @@ laravel文档中写的不是很详细，在这里进行补充。
 1. 命令创建表文件
 
 ```shell
+//创建一个创建tablename表的迁移文件
 php artisan make:migration create_tablename_table --create=tablename
+//创建一个修改tablename表的迁移文件
+php artisan make:migration add_column_tablename_table --table=tablename
 ```
 执行后，将在database/migrations文件下多出一个data-tablename的文件。
 
