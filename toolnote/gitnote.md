@@ -71,7 +71,7 @@ git reset HEAD filename
 ###修改远程服务器链接等问题
 添加远程服务器连接
 
-git remote add origin1 url
+git remote add origin url
 
 修改远程服务器链接
 
@@ -80,3 +80,33 @@ git remote set-url origin url
 查看远程仓库地址
 
 git remote -v
+
+###分支管理
+
+查看分支
+
+git branch
+
+创建分支并切换到该分支
+
+git checkout -b dev
+
+创建分支
+
+git branch dev
+
+切换到该分支
+
+git checkout dev
+
+删除该分支
+
+git branch -d dev
+
+合并某分支到当前分支
+
+git merge dev
+
+删除远程分支
+
+git push origin --delete dev
