@@ -66,9 +66,23 @@ HTML文档需要包含一些固定的标签，比如html、head、body等，现�
 
 ####隐式标签
 
-声明一个带类的标签，只需输入div.item，就会生成<div class="item"></div>。
+声明一个带类的标签，只需输入div.item，就会生成
 
-在过去版本中，可以省略掉div，即输入.item即可生成<div class="item"></div>。现在如果只输入.item，则Emmet会根据父标签进行判定。比如在<ul>中输入.item，就会生成<li class="item"></li>。
+```html
+<div class="item"></div>
+```
+
+在过去版本中，可以省略掉div，即输入.item即可生成
+
+```html
+<div class="item"></div>
+```
+
+现在如果只输入.item，则Emmet会根据父标签进行判定。比如在ul中输入.item，就会生成
+
+```html
+<li class="item"></li>
+```
 
 ![sublime的Emmet使用方法](./images/sublime-Emmet007.gif)
 
