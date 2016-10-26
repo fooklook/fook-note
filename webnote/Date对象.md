@@ -28,3 +28,17 @@ objectDate.toLocaleString();        //根据本地时间格式，把 Date 对象
 objectDate.toLocaleTimeString();    //根据本地时间格式，把 Date 对象的时间部分转换为字符串
 objectDate.toLocaleDateString();    //根据本地时间格式，把 Date 对象的日期部分转换为字符串
 ```
+
+###使用
+
+var myDate = new Date();            //创建Date对象时，对象会自动把当前日期和时间保存为参数形式。
+
+同时可以传入以下五种参数：
+
+```javascript
+new Date("month dd,yyyy hh:mm:ss");
+new Date("month dd,yyy");
+new Date(yyyy,mth,dd,hh,mm,ss);
+new Date(yyy,mth,dd);
+new Date(时间戳);
+```
