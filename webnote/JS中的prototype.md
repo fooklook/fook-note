@@ -24,7 +24,7 @@ People.prototype.IntroduceChinese=function(){
     alert("我的名字是"+this.name);
 }
 //测试
-var p1=new People("Windking");
+var p1 = new People("Windking");
 p1.Introduce();
 People.Run();
 p1.IntroduceChinese(); 
@@ -33,6 +33,8 @@ p1.IntroduceChinese();
 ###prototype是什么含义
 
 javascript中的每个对象都有prototype属性，Javascript中对象的prototype属性的解释是：返回对象类型原型的引用。
+
+将一个对象设置为一个类型的原型，相当于通过实例化这个类型，为对象简历只读副本，在任何时候对副本进行改变，都不会影响到原始对象。而对原始对象进行改变，则会影响到每一个副本，除非改变属性已经被副本自己的同名属性覆盖。
 
 ```javascript
 A.prototype = new B(); 
@@ -122,3 +124,52 @@ baseClass.showMsg.call(instance);//显示baseClass::showMsg static
 var baseinstance = new baseClass();
 baseinstance.showMsg.call(instance);//显示baseClass::showMsg
 ```
+
+###prototype的用法
+
+####设置默认值
+
+因为对象原型的值不会因副本变化而变化，所以为保证对象中有默认值，则可以这样使用。
+
+```javascript
+var objectA = function(){
+    this.a = 100;
+    this.b = 100;
+    this.c = 100;
+    //重置为默认值
+    this.prototype.reset = function(){
+        for(var each in this){
+            delete this[each];
+        }
+    }
+}
+objectA.prototype = new objectA();
+```
+
+####使用prototype创建大量副本
+
+创建大量复杂对象时，往往比较消耗资源。但可以通过prototype先以复杂对象为原型，然后通过创建新对象，则可以避免。
+
+```javascript
+var objectA = function(){
+    //这是一个复杂对象
+}
+var objectB = function(){};             //这是一个空对象
+objectB.prototype = new objectA();
+var arr = Array();
+for(var i=0; i<=100; i++){
+    arr.push(new objectB());            //因为objectB是空对象，因此构造起来更加快。
+}
+```
+
+####使用prototype定义方法可以减少创建对象时的系统开销。
+
+```javascript
+var objectA = function(){
+    this.x = x;
+    this.y = y;
+}
+objectA.prototype.fun1 = function(){};
+```
+
+上面的fun1可以通过this.fun1的方式声明，但通过上面的做法，可以减少在创建对象时，对fun1的赋值。
