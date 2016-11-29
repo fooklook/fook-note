@@ -110,3 +110,39 @@ data[2](); // 2
 //输出My object
 ```
 
+###闭包中概念的理解
+
+####私有域
+
+```javascript
+var a,b;
+(function(){
+    showAB = function(){        //未进行var初始化，showAB为全局函数
+        console.log(a+"--"+b);
+    }
+    var a=10,b=20;
+})();
+a = -10;
+b = -20;
+console.log(a+"--"+b);
+showAB();
+```
+
+####观察者
+
+```javascript
+function ClassA(){
+    var a = 100;
+    var b = 200;
+    this.declareFriend = function(fritend){
+        fritend.getPrivateProperty = function(privateName){
+            return eval(privateName);
+        }
+    }
+}
+var objA = new ClassA();
+var objB = new Object();
+objA.declareFriend(objB);
+objB.getPrivateProperty("a");
+objB.getPrivateProperty("b");
+```
