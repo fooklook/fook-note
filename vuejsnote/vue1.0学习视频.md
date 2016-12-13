@@ -69,3 +69,5 @@
 - Vue Mixins
 
 [视频链接](http://7xo7bi.com1.z0.glb.clouddn.com/vue1.0/22Vue%20Mixins.mp4)
+
+###vue2.0
