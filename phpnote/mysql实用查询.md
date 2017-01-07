@@ -36,3 +36,15 @@ table2
 ```mysql
 SELECT id, name, group_concat(bookname) from table1 LFET JOIN table2 ON(table1.id=table2.table1_id) WHERE id<10 group by id;
 ```
+
+###查询结果顺序按IN关键字中ID的排列
+
+```mysql
+SELECT * FROM items WHERE item_id IN( 2, 1, 3, 9, 7) ORDER BY FIELD( item_id, 2, 1 ,3 ,9 , 7 )
+```
+
+###用一条sql语句统计某一字段等于不同值的个数
+
+```mysql
+select id,sum(case when type=0 then 1 else 0 end) as '0',sum(case when type=1 then 1 else 0 end) as '1' from t group by id
+```
