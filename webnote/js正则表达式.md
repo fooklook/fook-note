@@ -30,13 +30,51 @@ Pattern.RegURL = /^(http|https):\/\/([\W-]+\.)+[\w-]+(\/[\w-.\/?%&=])?$/; //网�
 - i:忽略大小写
 - m:多模式匹配，针对多行字符串，匹配每行中的内容（而不是把换行作为字符串的结束标志）。添加标志符m后，如果正则表达式中有^和$，则匹配每行的开始和结尾。
 
+###属性
+
+```javascript
+var pattern = /abc./igm;
+var text = "abcdefg";
+pattern.source     //正则表达式正文 abc(.*)
+pattern.flags      //正则表示修饰符 igm
+pattern.global     //是否设置了g标志 true
+pattern.ignoreCase //是否设置了i标志 true
+pattern.multiline  //是否设置了m标志 true
+pattern.lastIndex  //搜索下一个匹配项的字符位置 从零开始
+var matches = pattern.exec(text);
+pattern.lastIndex  //这里返回4
+```
+
+###exec
+
+```javascript
+var pattern = /abc(.)/g;
+var text = "abcdefg";
+var matches = pattern.exec(text);
+//返回的数组属性
+matches.input   //匹配的字符串  abcdefg
+matches.index   //匹配的起始点  0
+matches[0]      //匹配结果 abcd
+matches[1]      //捕捉匹配的字符串 d
+```
+
+###test
+
+判断是否匹配成功
+
+```javascript
+var pattern = /abc(.)/g;
+var text = "abcdefg";
+pattern.exec(text);     //返回 true
+```
+
 ###search
 
 search方法以正则表达式作为参数，返回第一个与之匹配的子串开始的位置，如果没有匹配则返回-1。
 
 ```javascript
 var str = "abcdefghigklmn";
- console.log(str.search(/efg/));               //4
+console.log(str.search(/efg/));               //4
 ```
 
 ###replace
