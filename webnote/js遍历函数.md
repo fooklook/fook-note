@@ -2,6 +2,8 @@
 
 ###filter
 
+对数组中的每一项运行给定的函数，返回该函数会返回true的项组成的数组。
+
 ```javascript
 function isBigEnough(element, index, array) {
     return (element >= 10);
@@ -11,6 +13,8 @@ var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 ```
 
 ###map
+
+对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
 
 ```javascript
 var strings = ["hello", "Array", "WORLD"];
@@ -52,6 +56,8 @@ passed = [12, 54, 18, 130, 44].every(isBigEnough);
 ```
 
 ###forEach
+
+对数组中的每一项运行给定的函数，这个方法没有返回值。
 
 ```javascript
 function printElt(element, index, array) {

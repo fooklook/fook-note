@@ -6,6 +6,7 @@ var objectDate = new Date();
 objectDate.toString();             //当前时间
 objectDate.getDate();              //返回指定日期中的某一天（1~31）
 objectDate.getDay();               //返回指定日期中的周几（0~6）
+objectDate.getMonth();             //返回日期中的月份 (0 ~ 11)
 objectDate.getFullYear();          //从 Date 对象以四位数字返回年份
 objectDate.getHours();              //返回 Date 对象的小时 (0 ~ 23)
 objectDate.getMinutes();            //返回 Date 对象的分钟 (0 ~ 59)
