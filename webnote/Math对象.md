@@ -11,8 +11,8 @@ Math.PI           //常数π
 Math.SQRT1_2      //1/2的平方根
 Math.SQRT_2       //2的平方根
 //--------------------静态方法---------------
-Math.ceil(n)      //对一个值上舍入
-Math.floor(n)     //对一个值下舍入
+Math.ceil(n)      //对一个值向上舍入
+Math.floor(n)     //对一个值向下舍入
 Math.round(n)     //取整
 Math.random(n)    //得到一个随机数
 Math.abs(n)       //计算绝对值
