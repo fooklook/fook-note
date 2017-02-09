@@ -43,6 +43,22 @@ config set requirepass password
 sudo src/redis-cli -h 127.0.0.1 -p 6379 -a password
 ```
 
+###开启redis后台运行
+
+修改redis.conf文件
+
+```shell
+daemonize yes
+```
+
+###关闭redis服务
+
+```shell
+pkill redis-server
+//或者
+redis-cli shutdown
+```
+
 ###打开端口，供外网访问
 
 ```shell
