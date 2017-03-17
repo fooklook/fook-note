@@ -7,9 +7,27 @@
 安装swoole前必须保证系统已经安装了下列软件
 
 php-5.3.10 或更高版本
+
 gcc-4.4 或更高版本
+
 make
+
 autoconf
+
+PCRE
+
+###安装PCRE
+
+```shell
+sudo apt-get update
+sudo apt-get install libpcre3 libpcre3-dev
+```
+
+可能还需要安装
+
+```shell
+sudo apt-get install openssl libssl-dev
+```
 
 ###下载swoole源码
 
