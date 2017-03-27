@@ -34,6 +34,8 @@ git add README.md
 
 git commit -m "message"
 
+git commit --amend 可以对上一次的提交做修改
+
 ###查看版本区别
 
 查看版本情况
