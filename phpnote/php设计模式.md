@@ -186,6 +186,7 @@ echo $result;
 ```
 
 工厂模式：
+
 以交通工具为例子：要求请既可以定制交通工具，又可以定制交通工具生产的过程
 1. 定制交通工具
     1. 定义一个接口，里面包含交工工具的方法（启动 运行 停止）
@@ -199,54 +200,40 @@ echo $result;
  观察者模式属于行为模式，是定义对象间的一种一对多的依赖关系，以便当一个对象的状态发生改变时，所有依 赖于它的对象都得到通知并自动刷新。它完美的将观察者对象和被观察者对象分离。可以在独立的对象（主体）中维护一个对主体感兴趣的依赖项（观察器）列表。 让所有观察器各自实现公共的 Observer 接口，以取消主体和依赖性对象之间的直接依赖关系。
 
 ```php
-class MyObserver1 implements SplObserver {
-    public function update(SplSubject $subject) {
-        echo __CLASS__ . ' - ' . $subject->getName();
+class Paper{ /* 主题    */
+    private $_observers = array();
+ 
+    public function register($sub){ /*  注册观察者 */
+        $this->_observers[] = $sub;
     }
-}
-
-class MyObserver2 implements SplObserver {
-    public function update(SplSubject $subject) {
-        echo __CLASS__ . ' - ' . $subject->getName();
-    }
-}
-
-class MySubject implements SplSubject {
-    private $_observers;
-    private $_name;
-
-    public function __construct($name) {
-        $this->_observers = new SplObjectStorage();
-        $this->_name = $name;
-    }
-
-    public function attach(SplObserver $observer) {
-        $this->_observers->attach($observer);
-    }
-
-    public function detach(SplObserver $observer) {
-        $this->_observers->detach($observer);
-    }
-
-    public function notify() {
-        foreach ($this->_observers as $observer) {
-            $observer->update($this);
+ 
+     
+    public function trigger(){  /*  外部统一访问    */
+        if(!empty($this->_observers)){
+            foreach($this->_observers as $observer){
+                $observer->update();
+            }
         }
     }
-
-    public function getName() {
-        return $this->_name;
+}
+/**
+ * 观察者要实现的接口
+ */
+interface Observerable{
+    public function update();
+}
+ 
+class Subscriber implements Observerable{
+    public function update(){
+        echo "Callback\n";
     }
 }
 
-$observer1 = new MyObserver1();
-$observer2 = new MyObserver2();
-
-$subject = new MySubject("test");
-
-$subject->attach($observer1);
-$subject->attach($observer2);
-$subject->notify(); 
+$paper = new Paper();
+$paper->register(new Subscriber());
+//$paper->register(new Subscriber1());
+//$paper->register(new Subscriber2());
+$paper->trigger();
 ```
 
 ###策略模式
