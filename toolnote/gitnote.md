@@ -70,6 +70,10 @@ git checkout -- filename
 
 git reset HEAD filename
 
+版本回退后，强制推送到远程分支
+
+git push -f
+
 ###修改远程服务器链接等问题
 添加远程服务器连接
 
