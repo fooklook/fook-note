@@ -34,6 +34,8 @@ git add README.md
 
 git commit -m "message"
 
+git commit --amend 可以对上一次的提交做修改
+
 ###查看版本区别
 
 查看版本情况
@@ -67,6 +69,10 @@ git rm filename
 git checkout -- filename
 
 git reset HEAD filename
+
+版本回退后，强制推送到远程分支
+
+git push -f
 
 ###修改远程服务器链接等问题
 添加远程服务器连接
@@ -110,3 +116,41 @@ git merge dev
 删除远程分支
 
 git push origin --delete dev
+
+###标签管理
+
+给当前commit打标签
+
+git tag tagname
+
+给指定的commit打标签
+
+git tag tagname commitnum
+
+创建带有说明的标签
+
+git tag -a tagname -m "version 0.1 released" commitnum
+
+查询标签
+
+git tag
+
+查询标签修改内容
+
+git show tagname
+
+删除标签
+
+git tag -d tagname
+
+在本地打上标签，只会在本地，如果想要推送某个标签到远程
+
+git push origin v1.0
+
+一次性推送全部尚未推送到远程的本地标签
+
+git push origin --tags
+
+删除远程的标签，先删除本地标签，然后在执行以下代码
+
+git push origin :refs/tags/tagname
