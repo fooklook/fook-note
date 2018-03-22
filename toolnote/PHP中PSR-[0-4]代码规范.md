@@ -16,7 +16,7 @@ PSR-4 (Improved Autoloading) 自动加载的增强版，可以替换掉PSR-0了�
 
 ###PSR-0 规范（自动加载规范）
 
-PRS-0规范是他们出的第1套规范，主要是制定了一些自动加载标准（Autoloading Standard）,但目前已经被已经被PSR-4代替，官网也不推荐使用。
+PSR-0规范是他们出的第1套规范，主要是制定了一些自动加载标准（Autoloading Standard）,但目前已经被已经被PSR-4代替，官网也不推荐使用。
 
 PSR-0强制性要求几点：
 
@@ -67,7 +67,7 @@ vendor/
 - 一个php文件只做一件事情。
 - 类名和方法名要使用驼峰命名，常量只能有大写字母和_组成
 
-### PRSR-2 规范（代码样式规范）
+### PSR-2 规范（代码样式规范）
 
 个人总结
 - 文件末尾必须空一行。
@@ -89,6 +89,12 @@ php关键字：'__halt_compiler', 'abstract', 'and', 'array', 'as', 'break', 'ca
 - 还有一些逻辑符的规范，这里就不一一举例。
 
 ### PSR-3 规范（日志接口规范）
+
+PSR-3(Logger Interface)日志接口规范，主要目的是为了让日志类库通过接收一个 LoggerInterface 对象来记录日志信息。
+
+1.LoggerInterface 接口对外定义了八个方法，分别用来记录 RFC 5424 中定义的八个等级的日志：debug、info、notice、warning、error、critical、alert、emergency
+
+2.第九个方法 log()，第一个参数为记录等级。可使用一个预先定义的等级常量作为参数来调用此方法，必须与直接调用以上八个方法具有相同的效果。如果传入的等级常量没有预先定义，则必须抛出 psr\Log\InvalidArgumentException 类型的异常。不推荐使用自定义的日志等级，除非你非常确定当前类库对其有所支持。
 
 ### PSR-4 规范（自动加载规范，PSR-0 规范的升级版，更加简介）
 
