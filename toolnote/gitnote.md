@@ -58,6 +58,18 @@ git reset --hard HRAD^
 
 git reset --hard 版本号
 
+单个文件回滚
+
+```
+git log filename                //查看文件版本日志
+
+git reset logname filename      //回滚
+
+git commit -m "reset reason"    //日志
+
+git checkout filename           //更新到工作目录
+```
+
 查看历史命令
 
 git reflog
