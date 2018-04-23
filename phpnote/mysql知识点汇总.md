@@ -8,6 +8,12 @@
 
 ### InnoDB
 
+InnoDB存储引擎将B+树索引分为聚集索引和非聚集索引。
+
+#### 聚集索引
+
+聚集索引是将主键作为键值来构建B+数，这意味着每张表都有一个主键，如果没有显式创建，则InnoDB存储引擎会自动创建一个6字节的主键。
+
 ### MyIsam与InnoDB
 
 ### 小知识点
@@ -23,13 +29,11 @@ ALTER TABLE table_name ADD KEY(column_name(prefix_length));
 ALTER TABLE city ADD KEY(cityname(7))
 ```
 
-#### 单列缩影
+#### 单列索引
 
-#### 多列缩影
+#### 多列索引
 
 #### 复合索引又名联合索引
-
-#### 聚集索引和非聚集索引
 
 ##### 聚集索引
 

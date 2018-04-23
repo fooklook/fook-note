@@ -18,19 +18,29 @@ $redis->sort('key', [$array]); //返回或保存给定列表、集合、有序�
 
 /** * 运算类归类 */ 
 $redis->expire('key', 10); //设置失效时间[true | false] 
-$redis->move('key', 15); //把当前库中的key移动到15库中[0|1] //string 
+$redis->move('key', 15); //把当前库中的key移动到15库中[0|1] 
+
+//string 
 $redis->strlen('key'); //获取当前key的长度 
 $redis->append('key', 'string'); //把string追加到key现有的value中[追加后的个数] 
 $redis->incr('key'); //自增1，如不存在key, 赋值为1(只对整数有效, 存储以10进制64位，redis中为str)[new_num | false] 
 $redis->incrby('key', $num); //自增$num, 不存在为赋值, 值需为整数[new_num | false] 
 $redis->decr('key'); //自减1，[new_num | false] 
 $redis->decrby('key', $num); //自减$num，[ new_num | false] 
-$redis->setex('key', 10, 'value'); //key=value，有效期为10秒[true] //list 
-$redis->llen('key'); //返回列表key的长度, 不存在key返回0， [ len | 0] //set 
+$redis->setex('key', 10, 'value'); //key=value，有效期为10秒[true] 
+
+//list 
+$redis->llen('key'); //返回列表key的长度, 不存在key返回0， [ len | 0] 
+
+//set 
 $redis->scard('key'); //返回集合key的基数(集合中元素的数量)。[num | 0] 
-$redis->sMove('key1', 'key2', 'member'); //移动，将member元素从key1集合移动到key2集合。[1 | 0] //Zset 
+$redis->sMove('key1', 'key2', 'member'); //移动，将member元素从key1集合移动到key2集合。[1 | 0] 
+
+//Zset 
 $redis->zcard('key'); //返回集合key的基数(集合中元素的数量)。[num | 0] 
-$redis->zcount('key', 0, -1); //返回有序集key中，score值在min和max之间(默认包括score值等于min或max)的成员。[num | 0] //hash
+$redis->zcount('key', 0, -1); //返回有序集key中，score值在min和max之间(默认包括score值等于min或max)的成员。[num | 0] 
+
+//hash
 $redis->hexists('key', 'field'); //查看hash中是否存在field, [1 | 0] 
 $redis->hincrby('key', 'field', $int_num); //为哈希表key中的域field的值加上量(+|-)num, [new_num | false] 
 $redis->hlen('key'); //返回哈希表key中域的数量。[ num | 0] 
