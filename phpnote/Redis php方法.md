@@ -56,7 +56,8 @@ $redis->lastSave(); //上次存储时间key的时间[timestamp]
 $redis->watch('key', 'keyn'); //监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断 [true] 
 $redis->unwatch('key', 'keyn'); //取消监视一个(或多个) key [true] 
 $redis->multi(Redis::MULTI); //开启事务，事务块内的多条命令会按照先后顺序被放进一个队列当中，最后由 EXEC 命令在一个原子时间内执行。 
-$redis->multi(Redis::PIPELINE); //开启管道，事务块内的多条命令会按照先后顺序被放进一个队列当中，最后由 EXEC 命令在一个原子时间内执行。 $redis->exec(); //执行所有事务块内的命令，；【事务块内所有命令的返回值，按命令执行的先后顺序排列，当操作被打断时，返回空值 false】 
+$redis->multi(Redis::PIPELINE); //开启管道，事务块内的多条命令会按照先后顺序被放进一个队列当中，最后由 EXEC 命令在一个原子时间内执行。 
+$redis->exec(); //执行所有事务块内的命令，；【事务块内所有命令的返回值，按命令执行的先后顺序排列，当操作被打断时，返回空值 false
 
 /** * String */
 $redis->setOption(Redis::OPT_PREFIX, 'hf_'); //设置表前缀为hf_ 
