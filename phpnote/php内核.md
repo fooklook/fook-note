@@ -19,6 +19,32 @@ PHP的源码下有几个主要目录：SAPI、main、Zend、ext。
 - 请求关闭阶段
 - 模块关闭阶段
 
+### SAPI
+
+SAPI是PHP框架的接口层，他是进入PHP内部的入口。PHP实现的SAPI有很多，比较典型的有：CLI、FPM、Embed。
+
+#### CLI（命令行接口）
+
+用于在命令行下执行PHP脚本，它是执行PHP脚本最简便的一种方式。
+
+CLI的生命周期是典型的PHP生命周期，先后经历模块初始化阶段（module startup）、请求初始化阶段（request startup）、执行脚本阶段（execute script）、请求关闭阶段（request shutdown）、模块关闭阶段（module shutdown）。
+
+从PHP5.4起，CLI SAPI提供了一个内置的Web服务器，这个内置的服务器主要用于本地开发使用，不可用于线上产品环境。默认执行目录内的index.php或者index.html。
+
+#### FPM
+
+Fpm是PHP FastCGI运行模式的一个进程管理器。FastCGI是Web服务器（如：Nginx、Apache）和处理程序之间的一种通信协议。
+
+Fpm是一种多进程模型，它由一个master进程和多个worker进程组成。master进程启动时会创建一个socket，但是不会接收、处理请求，而是fork出的worker子进程，比如当请求比较多，work进程处理不过来，master进程会尝试fork新的worker进程进行处理，而当空闲时，worker进程比较多时则会杀掉部分子进程。
+
+每个worker进程会竞争Accept请求，接收成功后，解析FastCGI，然后执行相应的脚本。处理完成后，关闭请求，继续等待新的请求。
+
+master进程与worker进程之间不会直接进行通信，master通过共享内存获取worker进程的信息，比如worker进程当前状态、已处理请求数等，master进程通过发送信号等方式杀掉worker进程。
+
+#### Embed
+
+Embed在编译后就是普通的库文件（可以编译成静态库、共享库），通过API的方式提供给其它语言使用。
+
 ### 面向对象
 
 面向对象编程，简称OOP，是一种程序设计思路。面向对象吧对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。
