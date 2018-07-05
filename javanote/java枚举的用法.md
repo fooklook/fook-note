@@ -120,5 +120,5 @@ public enum Color implements Behaviour{
     public void print() {  
         System.out.println(this.index+":"+this.name);  
     }  
-} 
-``` 
+}
+```
