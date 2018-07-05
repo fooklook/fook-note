@@ -1,18 +1,18 @@
-##gitnote
-###linux下安装git
+## gitnote
+### linux下安装git
 ```shell
 sudo apt-get install git
 ```
-###windows下使用git
+### windows下使用git
 建议安装git bash [git-bash工具使用](../toolnote/git-bash工具使用.md)
 
-###设置机器标识
+### 设置机器标识
 
 git config --global user.name "Your Name"
 
 git config --global user.email "email@example.com"
 
-###创建仓库
+### 创建仓库
 
 创建一个文件夹，并将文件夹变成版本仓库
 
@@ -22,7 +22,7 @@ cd folder
 
 git init
 
-###提交文件到仓库
+### 提交文件到仓库
 
 创建README.md文件
 
@@ -36,7 +36,7 @@ git commit -m "message"
 
 git commit --amend 可以对上一次的提交做修改
 
-###查看版本区别
+### 查看版本区别
 
 查看版本情况
 
@@ -46,7 +46,7 @@ git status
 
 git diff filename
 
-###版本后退
+### 版本后退
 
 查看版本日志
 
@@ -86,7 +86,7 @@ git reset HEAD filename
 
 git push -f
 
-###修改远程服务器链接等问题
+### 修改远程服务器链接等问题
 添加远程服务器连接
 
 git remote add origin url
@@ -99,7 +99,7 @@ git remote set-url origin url
 
 git remote -v
 
-###分支管理
+### 分支管理
 
 查看分支
 
@@ -129,7 +129,7 @@ git merge dev
 
 git push origin --delete dev
 
-###标签管理
+### 标签管理
 
 给当前commit打标签
 

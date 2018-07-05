@@ -1,4 +1,4 @@
-##ubuntu搭建服务器记录
+## ubuntu搭建服务器记录
 服务器安装的是ubuntu server14.01版本，没有图形化见面，所以所有的操作都是通过命令行实现。
 
 实现目标：
@@ -10,7 +10,7 @@
 - 安装xunsearch，并开启xunsearch服务
 - 安装git版本控制器
 
-###ssh远程访问
+### ssh远程访问
 很多时候我们不方便直接在服务器上进行操作，比如服务器安装后终端界面显示的中文为乱码，当然可以进行修复，但是可以用更简单的方法解决这个问题，就是通过ssh远程登录客户端。在windows下不管用git-bash或者putty工具，都不会出现乱码的情况。
 
 ```shell
@@ -20,7 +20,7 @@ ssh停止服务：sudo /etc/init.d/ssh stop
 ssh重启服务：sudo /etc/init.d/ssh restart
 ```
 
-###搭建lamp环境
+### 搭建lamp环境
 使用最简单除暴的方式安装
 
 ```shell
@@ -35,7 +35,7 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 ```
 
-###开启mysql远程访问
+### 开启mysql远程访问
 
 ```shell
 vim /etc/mysql/my.cnf找到bind-address = 127.0.0.1
@@ -59,7 +59,7 @@ grant all privileges on *.* to root@"%" identified by "password" with grant opti
 flush privileges;
 ```
 第一行命令解释如下，\*.\*：第一个\*代表数据库名；第二个\*代表表名。这里的意思是所有数据库里的所有表都授权给用户。root：授予root账号。“%”：表示授权的用户IP可以指定，这里代表任意的IP地址都能访问MySQL数据库。“password”：分配账号对应的密码，这里密码自己替换成你的mysql root帐号密码。
-###安装composer
+### 安装composer
 下载composer包
 
 ```shell
@@ -70,7 +70,7 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-###安装xunsearch，启动，并将xunsearch加入到开机启动
+### 安装xunsearch，启动，并将xunsearch加入到开机启动
 首先要确保ubuntu安装了gcc g++ make
 
 ```shell
@@ -117,7 +117,7 @@ ufw allow 8384
 ufw allow 8383
 ```
 
-###安装git
+### 安装git
 ```shell
 sudo apt-get install git
 ```
